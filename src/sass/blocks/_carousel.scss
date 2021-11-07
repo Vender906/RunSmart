@@ -1,0 +1,46 @@
+.carousel {
+    padding: 81px 0;
+    position: relative;
+    z-index: -1;
+    &__inner {
+        text-align: center;
+    }
+    &__dots {
+        position: relative;
+    }
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+    color: red;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+@media (max-width: 991px) {
+    .carousel {
+        &__inner {
+            width: 80%;
+        }
+        &__item {
+            height: 70%;
+            img {
+                max-width: 100%;
+            }
+        }
+        &__btn-prev {
+            display: none;
+        }
+        &__btn-next {
+            display: none;
+        }
+    }
+}
+
+@media (min-width: 991px) {
+    .carousel {
+        &__dots {
+            display: none;
+        }
+    }
+}
