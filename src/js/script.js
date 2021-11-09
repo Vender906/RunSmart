@@ -30,6 +30,7 @@ const swiper = new Swiper('.swiper', {
   }
 });
 
+//tabs
 $(function() {
   $('ul.catalog__tabs').on('click', 'li:not(.catalog__tab_active)', function() {
     $(this)
@@ -38,7 +39,7 @@ $(function() {
   });
 });
 
-
+//tabs-back
 function toggleSlide(item) {
     $(item).each(function (i) {
     $(this).on('click', function (e) {
@@ -59,6 +60,7 @@ $('[data-modal=consultation]').on('click', function () {
 });
 
 
+//close modal
 $('.modal__close').on('click', function () {
   $('.overlay, #consultation, #thanks, #order').fadeOut('slow');
 });
@@ -94,3 +96,37 @@ function validateForms(form) {
 validateForms('#consultation-form');
 validateForms('#consultation form');
 validateForms('#order form');
+
+$(function () {
+  $("input[name=phone]").mask("+7 (999) 999-99-99");
+});
+
+$(window).scroll(function () {
+  if ($(this).scrollTop() > 1600) {
+    $('.pageup').fadeIn();
+  } else {
+    $('.pageup').fadeOut();
+  }
+
+});
+
+new WOW().init();
+
+$('form').submit(function(e) {
+  e.preventDefault();
+  $.ajax({
+    type: "POST",
+    url: "mailer/smart.php",
+    data: $(this).serialize()
+  }).done(function () {
+    $(this).find("input").val("");
+    $('#consultation, #order').fadeOut();
+    $('.overlay, #thanks').fadeIn('slow');
+    
+
+    $('form').trigger('reset');
+  });
+  return false;
+});
+
+

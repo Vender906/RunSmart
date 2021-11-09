@@ -1,5 +1,10 @@
 .catalog {
+    margin-top: 107px;
     padding-bottom: 100px;
+    .title {
+        animation-duration: 2s;
+        animation-name: lightSpeedInRight;
+    }
     &__tabs {
         margin-top: 70px;
         list-style-type: none;
@@ -7,6 +12,8 @@
         justify-content: center;
         align-items: center;
         padding-left: 0;
+        animation-duration: 2s;
+        animation-name: lightSpeedInLeft;
     }
     &__tab {
         width: 222px;
@@ -169,6 +176,25 @@
             &:hover {
                 color: $main-color;
             }
+        }
+    }
+}
+
+@media (max-width: 991px) {
+    .catalog {
+        &__content {
+            justify-content: space-around;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .catalog {
+        &__tabs {
+            flex-direction: column;
+        }
+        &__tab {
+            margin-top: 10px;
         }
     }
 }

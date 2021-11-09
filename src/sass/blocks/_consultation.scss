@@ -7,6 +7,8 @@
         color: #FFFFFF;
         font-weight: 500;
         font-size: 20px;
+        animation-duration: 2s;
+        animation-name: backInUp;
     }
     .error {
         border: 1px solid red;
@@ -19,6 +21,15 @@
         margin-bottom: 10px;
         font-weight: bold;
         font-size: 14px;
+    }
+
+    .feed-form {
+        animation-duration: 2s;
+        animation-name: backInUp;
+    }
+    .button {
+        animation-duration: 2s;
+        animation-name: backInUp;
     }
 }
 

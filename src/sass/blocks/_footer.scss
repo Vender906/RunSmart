@@ -1,6 +1,6 @@
 .footer {
     position: relative;
-    height: 630px;
+    min-height: 630px;
     &__info {
         position: absolute;
         top: 0;
@@ -42,5 +42,20 @@
         justify-content: center;
         align-items: center;
         margin: 0 15px;
+    }
+}
+
+@media (max-width: 991px) {
+    .footer {
+        margin-top: 50px;
+    }
+}
+
+
+@media (max-width: 575px) {
+    .footer {
+        &__info {
+            width: 90%;
+        }
     }
 }

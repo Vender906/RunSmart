@@ -40,6 +40,9 @@
             width: 42px;
             height: 46px;
             margin-bottom: 20px;
+            animation-duration: 2s;
+            animation-name: swing;
+            animation-iteration-count: infinite;
         }
     }
     &__link {
